@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>校园头条</title>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="../bitbug_favicon.ico">
+    <!-- Bootstrap 样式表 -->
+    <link href="../cpnts/bootstrap-4.0.0/css/bootstrap.css" rel="stylesheet">
+    <!-- 当前页面用到的自定义样式表 -->
+    <link rel="stylesheet" type="text/css" href="../styles/newsContent.css">
+    <link rel="stylesheet" type="text/css" href="../styles/ct-top.css">
+</head>
+<body>
+	<!-- 顶部标题栏 -->
+	<header class="top-title fixed-top navbar">
+		<a href="home.html"><img src="../images/newsContent/return.png" height="48" width="48"></a>
+		<a href="#more" data-toggle="collapse"><img src="../images/newsContent/more.png" height="48" width="48"></a>
+	</header>
+	<!-- 更多菜单 -->
+	<div class="collapse more" id="more">
+		<div><a href="comment.html"><img src="../images/newsContent/comment.png" height="32" width="32"> 评论</a>
+		</div>
+		<div id="collectBox">
+			<img src="../images/newsContent/collect.png" height="32" width="32" class="collect" id="collect">收藏
+		</div>
+		<div>
+			<img src="../images/newsContent/share.png" height="32" width="32"> 分享
+		</div>
+	</div>
+	<div class="container text-center" id="container">
+	<!-- 新闻内容 -->
+	<main id="newscontent">
+	<!-- 文章标题 -->
+	<h5 class="title_article" id="title" >
+		{{newsTitle}}
+	</h5>
+	<div class="small-title">发布时间：<span id="news_time" class="newsTime">{{releaseTime}}</span>浏览次数:<span class="VisitCount" >10</span> 来自: <span class="from">{{source}}</span>
+	</div>
+	<hr>
+	<!-- 文章 -->
+	<article class="news-article text-left" id="newsArticle" v-html="newsArticle">
+<!-- 	{{newsArticle}} -->
+	</article>
+	<!-- 图片 -->
+	<img src="../images/home/教务新闻1.jpg" height="480" width="640" class="img-responsive" v-bind:src="newsImage">
+	</main>
+	<a href="#0" class="cd-top">Top</a>
+	<script src="../cpnts/vue-2.5.16/vue.min-2.5.16.js"></script>
+  <script src="../utils/qwest.min.js"></script> 
+      <script src="../cpnts/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    <script src="../cpnts/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../cpnts/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/top.js"></script> 
+    <script src="../scripts/newsContent.js"></script>
+	</div>
+</body>
+</html>

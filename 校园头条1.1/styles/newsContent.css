@@ -1,0 +1,56 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-03 00:58:49
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-13 21:22:58
+*/
+body{
+	background-color: #f7f7f5;
+}
+.top-title{
+	background-color: #1296db;
+	height: 50px;
+	line-height: 50px;
+}
+.container{
+	margin-top: 60px;
+	margin-bottom: 32px;
+}
+
+.small-title{
+	font-size: 12px;
+	color: #787878;
+}
+.small-title span{
+	margin-right: 10px;
+}
+.news-article{
+	text-indent: 2em;
+}
+main img{
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+.more{
+/* 	float: right; */
+	position: fixed;
+	right: 10px;
+	background-color: #dbdbdb;
+	background-image: url(../images/newsContent/bg.jpg);
+	background-position: -1px 0px;
+	background-position: 
+	margin-right: 15px;
+	padding:10px;
+	padding-top: 15px;
+	top: 50px;
+	width: 95px;
+
+}
+.more div{
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+	color: black;
+}

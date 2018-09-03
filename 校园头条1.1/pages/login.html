@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="校园头条">
+    <meta name="author" content="第十组">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="../bitbug_favicon.ico">
+    <title>登录</title>
+    <!-- Bootstrap 样式表 -->
+    <link href="../cpnts/bootstrap-4.0.0/css/bootstrap.css" rel="stylesheet">
+    <!-- 当前页面用到的自定义样式表 -->
+    <link href="../styles/login.css" rel="stylesheet">
+  </head>
+  
+  <body >
+  <div class="container ">
+  <h4 class="h4 mb-3 font-weight-normal "><img src="../images/login/news.png" height="64" width="64" /> 校园头条</h4>
+  <hr>
+  <!-- 表单 -->
+   <div class="row" >
+      <div class="col-md-4 col-sm-10 offset-md-7 offset-sm-1 
+      form_box" >
+          <br>
+<!-- 选项导航条 -->
+      <ul class="nav nav-tabs  nav-justified " role="tablist ">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#login">登陆</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#register">注册</a>
+        </li>
+      </ul>
+<!-- 选项 -->
+      <div class="tab-content ">
+<!-- 登陆 -->
+        <div id="login" class="container tab-pane active">
+          <form class="form-signin form-horizontal ">
+           <div class="input-group ">
+              <div class="input-group-prepend">
+                <img src="../images/login/login-s.png" height="32" width="32">
+              </div>
+              <input type="text" v-model="userName" id="user" class="form-control  mb-3 userName" placeholder="请输入手机号/用户名" required autofocus />
+         </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+            <img src="../images/login/register2.png" height="32" width="32" >
+            </div>
+            <label for="password" class="sr-only">密码</label>
+              <input type="password" v-model="password" id="password" class="form-control" placeholder="请输入密码" required />
+          </div>
+
+          <div v-if="hasError" class="alert alert-danger" role="alert">
+            {{ errorMessage }}
+          </div>
+          <button class="btn  btn-primary btn-block" type="button" v-on:click="login">登 录</button>
+          <div class="changePsw ">
+            <a href="forgetPsw.html">忘记密码</a>
+          </div>
+          <p class="mt-5 mb-3 text-muted">&copy; 2018 电子商务系项目制第十组</p>
+       </form>
+    </div>
+  
+<!-- 注册 -->
+        <div id="register" class="container tab-pane fade">
+        <form class="form-signin">
+          <div class="input-group">
+            <div class="input-group-prepend">
+            <img src="../images/login/register1.png" height="32" width="32" class="inpyt">
+            </div>
+                <input type="text" v-model="newUserName" id="user" class="form-control mb-3" placeholder="请输入手机号/用户名" required autofocus />
+              </div>
+              <div class="input-group">
+            <div class="input-group-prepend" height="40" width="40">
+            <img src="../images/login/register2.png" height="32" width="32">
+            </div>
+                <input type="password" v-model="newpsw" id="password" class="form-control" placeholder="请输入密码" required />
+            </div>
+             <div class="input-group">
+            <div class="input-group-prepend" style="width:32px;height:32px;" >
+            </div>
+                <input type="password" v-model="confirmpsw" id="confirmpsw" class="form-control" placeholder="请再次确认密码" required />
+            </div>
+             <div class="input-group" >
+            <div class="input-group-prepend" style="width:32px;height:32px;" >
+            </div>
+              <label for="academy" class="sr-only">学院</label>
+                <select class="academy" id="academy">
+                  <option>管理学院</option>
+                </select>
+            </div>
+          <div v-if="RhasError" class="alert alert-danger" role="alert">
+              {{ RerrorMessage }}
+          </div>
+          <button class="btn  btn-primary btn-block" type="button" v-on:click="register">注 册</button>
+          </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../cpnts/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../cpnts/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    <script src="../cpnts/vue-2.5.16/vue.min-2.5.16.js"></script>
+    <script src="../utils/qwest.min.js"></script>
+    <script src="../scripts/login.js"></script>
+    <!-- <script src="../scripts/register.js"></script> -->
+  </body>
+</html>

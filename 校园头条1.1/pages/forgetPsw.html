@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>忘记密码</title>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="../bitbug_favicon.ico">
+    <link href="../cpnts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap 样式表 -->
+    <link href="../cpnts/bootstrap-4.0.0/css/bootstrap.css" rel="stylesheet">
+    <!-- 当前页面用到的自定义样式表 -->
+    <link href="../styles/changPsw.css" rel="stylesheet">
+</head>
+<body class="text-center">
+		<form class="form-signin">
+		<h3>修改密码</h3>
+		<div class="input-group">
+			<div class="input-group-prepend">
+			<img src="../images/login/login-s.png" height="32" width="32" class="inpyt">
+			</div>
+	        <input type="text" v-model="userName" id="user" class="form-control mb-3" placeholder="请输入手机号/用户名" required autofocus />
+      	</div>
+      	<div class="input-group">
+			<div class="input-group-prepend" height="40" width="40">
+			<img src="../images/login/register2.png" height="32" width="32">
+			</div>
+	        <input type="password" v-model="password" id="password" class="form-control mb-3" placeholder="请输入密码" required />
+  		</div>
+  		 <div class="input-group">
+			<div class="input-group-prepend" style="width:32px;height:32px;" >
+			</div>
+	        <input type="confirmpsw" v-model="confirmpsw" id="confirmpsw" class="form-control" placeholder="请再次确认密码" required />
+  		</div>
+		 <div v-if="hasError" class="alert alert-danger alert-warning" role="alert" >
+        {{ errorMessage }}
+      	</div>
+		<button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="submit">提 交</button>
+	</form>
+	<script src="../cpnts/vue-2.5.16/vue.min-2.5.16.js"></script>
+    <script src="../utils/qwest.min.js"></script>
+    <script src="../scripts/forgetPsw.js"></script>
+</body>
+</html>

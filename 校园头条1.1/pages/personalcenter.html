@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="校园头条">
+<meta name="apple-mobile-web-app-capable" content="yes" />    
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=yes"/>
+<meta name="msapplication-tap-highlight" content="no" />
+<title>个人中心</title>
+<link rel="icon" href="../bitbug_favicon.ico"/>  
+<link href="../cpnts/bootstrap-4.0.0/css/bootstrap.css" rel="stylesheet">
+<script src="../cpnts/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+<script src="../cpnts/bootstrap-4.0.0/js/bootstrap.js"></script>
+<link rel="stylesheet" href="../styles/base.css">
+<link href="../styles/personalcenter.css" rel="stylesheet">
+<link href="../iconfont/iconfont.css" rel="stylesheet">
+<script src="../scripts/top.js"></script> 
+</head>
+<body>
+<div  class="container" >
+		<!-- 返回 -->
+    	<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+    			<a href="home.html"><i class="icon iconfont icon-fanhui icon-style"></i></a>
+    			<span class="m-auto">个人中心</span>
+    	</nav>
+        <div class="container">
+
+          <header >
+            <div class="row"><img id="" src="../images/home/头像.png" height="200" width="200" class="img-head img-fluid" alt="Responsive image" ></div>
+            <div class=" text-center"><p>用户名</p></div>
+            <div class=" text-center"><p>管理学院</p></div>
+          </header>
+    <!-- 各个功能区 -->
+          <div class="container-fluid workarea">  
+            <div class="row">    
+              <div class="col text-center work" onclick="window.open('#','_self','');">
+                <i class="icon iconfont icon-pinglun icon-style"></i>
+                <a href="mycomments.html"><h5>我的评论</h5></a> 
+              </div>  
+              <div class="col   text-center work" onclick="window.open('#','_self','');">
+                <i class="icon iconfont icon-shoucang icon-style"></i>
+                <a href="myfavorite.html"><h5>我的收藏</h5></a>
+              </div>  
+            </div>  
+            <div class="row">    
+              <div class="col   text-center work" onclick="window.open('#','_self','');">
+                <i class="icon iconfont icon-yijianfankui icon-style"></i>
+                <a href="advice.html"><h5>意见反馈</h5></a>
+              </div> 
+              <div class="col text-center work" onclick="window.open('#','_self','');">
+                <i class="icon iconfont icon-mima icon-style"></i>
+                <a href="update.html"><h5>密码修改</h5></a>
+              </div> 
+            </div>
+          </div>  
+    <!-- 退出登录 -->
+          <a href="login.html" class="container text-center">
+            <button tpye="button" class="btn btn-primary btn-style btn-primary">退出登录</button>
+          </a>
+     </div>
+</div>
+</body>
+</html>

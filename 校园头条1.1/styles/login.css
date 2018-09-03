@@ -1,0 +1,69 @@
+html,
+body {
+  height: 100%;
+}
+/* 弹性盒子使其垂直居住 */
+body{
+  display: -ms-flexbox;
+  display: -webkit-box;
+  -ms-flex-align: center;
+  -ms-flex-pasck: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  /* padding-top: 40px; */
+  padding-bottom: 40px;
+}
+.row{
+/*   padding-top: 40px;
+  padding-bottom: 20px; */
+  background-color: #39a6eb;
+  background-image: url(../images/login/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: -600px 0;
+}
+.form_box{
+  background-color: rgb(255,255,255);
+}
+.link-box{
+  margin-top: 10px;
+}
+ .form-signin { 
+ /* background-color: #39a6eb; */
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  display: block; 
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn{
+  margin-top: 10px;
+}
+.userphoto{
+  width:10%;
+  height:50%;
+  max-width:100%;
+} 

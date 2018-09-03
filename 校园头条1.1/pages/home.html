@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="校园头条">
+<meta name="apple-mobile-web-app-capable" content="yes" />    
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=yes"/>
+<meta name="msapplication-tap-highlight" content="no" />
+<title>校园头条</title>
+<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="../cpnts/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="../cpnts/jquery-3.3.1/jquery-3.3.1.slim.js"></script>
+<script src="../cpnts/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+<link rel="stylesheet" href="../cpnts/dist/tuxedo-menu.css">
+<link rel="stylesheet" href="../styles/base.css">
+</head>
+<body>
+<!-- <div id="app"> -->
+  <div class="tuxedo-navbar container d-flex fixed-top bg-light" style="padding:0 0">
+            <span class="tuxedo-menu-trigger" style="height:65px;padding-left:10px">
+              <img src="../images/home/列表.png" class="img-responsive img-rounded float-left" style="height:65px;padding:12px 0">
+            </span> 
+            <a class="navbar-brand" href="#" style="margin:auto; height:65px;padding:0 0" >
+                <img class="img-responsive img-rounded" src="../images/login/news.png" style="height:65px;padding:12px 0">
+                <span>校园头条</span>
+            </a>
+    </div>
+    <a class="container input-group mb-3" href="search.html" style="text-decoration:none;margin-top:70px">
+      <input type="text" class="form-control" placeholder="请输入关键字">
+      <div class="input-group-append">
+        <button class="btn" type="submit" style="background:#87CEEB">搜索</button>  
+      </div>
+    </a>
+  <main id="app" class="container" style="padding-left:0;padding-right:0">
+      <div id="menu-container">
+              <nav id="sidebar" class="tuxedo-menu" style="background:#87CEEB">
+                   <ul class="nav nav-pills flex-column" role="tablist">
+                <li style="height:115px;text-align:center;background-image:url(../images/home/头像背景.jpeg);background-repeat:no-repeat">
+                  <a href="personalcenter.html" style="padding:0 0;height:70px">
+                    <img class="img-responsive img-rounded" id="userphoto" style="height:100%" v-bind:src="user.photo">
+                  </a>
+                  <span id="username" style="color:white ">{{user.name}}</span><br>
+                  <span id="useracademy" style="color:white">{{user.academy}}</span>
+                </li>
+                <li class="header-menu" style="color:black"><span>菜单</span></li>
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="pill" href="#page1" style="color:black" ><span>教务部</span></a>
+                </li>                  
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#page2" style="color:black" ><span>学工处</span></a>
+                </li>      
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#page3" style="color:black" ><span>团委</span></a>
+                </li>      
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#page4" style="color:black" ><span>图书馆</span></a>
+                </li>      
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#page5" style="color:black" ><span>后勤总务部</span></a>
+                </li>                        
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#page6" style="color:black" ><span>科研院</span></a>
+                </li>      
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#page7" style="color:black" ><span>研究生院</span></a>
+                </li>      
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#page8" style="color:black" ><span>其他</span></a>
+                </li>      
+              </ul>
+            </nav>
+      </div>
+      <div class="container-fluid tab-content" style="padding-left:0;padding-right:0">
+        <div id="page1" class="container-fluid tab-pane active">
+          <div class="row">
+            <div class="col-md-6">
+              <header>
+                        <h4>新闻</h4>
+                    </header>
+            <div class="list-group">
+                  <a style="color:black" class="list-group-item" v-for="news in page1news" v-bind:href="news.url">
+                    <img  class="img-responsive img-rounded" v-bind:src="news.image" alt="" style="width:20%;height:20%">
+                    <span>{{ news.content }}</span>
+                  </a>
+                 
+              </div>
+            </div>
+            <div class="col-md-6">
+              <header>
+                  <h4>通知</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" v-for="notice in page1notices" class="list-group-item" v-bind:href="notice.url">
+                  <span>{{ notice.content }}</span>
+                </a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+         <div id="page2" class="container-fluid tab-pane fade">
+          <div class="row">
+            <div class="col-sm-6">
+              <header>
+                <h4>新闻</h4>
+              </header>
+              <div class="list-group">
+                 <a style="color:black" class="list-group-item" v-for="(news,index) in page2news" v-show="index<9" v-bind:href="news.url">
+                    <img  class="img-responsive img-rounded" v-bind:src="news.image" alt="" style="width:20%;height:20%">
+                    <span>{{ news.content }}</span>
+                  </a>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <header>
+                <h4>通知</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" v-for="(news,index) in page2notices" v-show="index<9" class="list-group-item" v-bind:href="news.url">
+                  <span>{{ news.content }}</span>
+                </a>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page3" class="container-fluid tab-pane fade">
+          <div class="row">
+            <div class="col-sm-6">
+              <header>
+                <h4>新闻</h4>
+              </header>
+              <div class="list-group">
+                 <a style="color:black" class="list-group-item" v-for="news in page3news" v-bind:href="news.url">
+                    <img  class="img-responsive img-rounded" v-bind:src="news.image" alt="" style="width:20%;height:20%">
+                    <span>{{ news.content }}</span>
+                  </a>
+               
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <header>
+                <h4>通知</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" v-for="news in page3notices"  class="list-group-item" v-bind:href="news.url">
+                  <span>{{ news.content }}</span>
+                </a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4" class="container-fluid tab-pane fade">
+          <div class="row">
+            <div class="col-sm-6">
+              <header>
+                <h4>新闻</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" class="list-group-item" v-for="news in page4news" v-bind:href="news.url">
+                    <img  class="img-responsive img-rounded" v-bind:src="news.image" alt="" style="width:20%;height:20%">
+                    <span>{{ news.content }}</span>
+                  </a>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <header>
+                <h4>通知</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" v-for="news in page4notices" class="list-group-item" v-bind:href="news.url">
+                  <span>{{ news.content }}</span>
+                </a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5" class="container-fluid tab-pane fade">
+          <div class="row">
+            <div class="col-sm-6">
+              <header>
+                <h4>新闻</h4>
+              </header>
+              <div class="list-group">
+                 <a style="color:black" class="list-group-item" v-for="(news,index) in page5news" v-show="index<9" v-bind:href="news.url">
+                    <img  class="img-responsive img-rounded" v-bind:src="news.image" alt="" style="width:20%;height:20%">
+                    <span>{{ news.content }}</span>
+                  </a>
+               
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <header>
+                <h4>通知</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" v-for="(news,index) in page5notices" v-show="index<9" class="list-group-item" v-bind:href="news.url">
+                  <span>{{ news.content }}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page6" class="container-fluid tab-pane fade">
+          <div class="row">
+            <div class="col-sm-6">
+              <header>
+                <h4>新闻</h4>
+              </header>
+              <div class="list-group">
+                 <a style="color:black" class="list-group-item" v-for="(news,index) in page6news" v-show="index<9" v-bind:href="news.url">
+                    <img  class="img-responsive img-rounded" v-bind:src="news.image" alt="" style="width:20%;height:20%">
+                    <span>{{ news.content }}</span>
+                  </a>
+                
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <header>
+                <h4>通知</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" v-for="(news,index) in page6notices" v-show="index<9" class="list-group-item" v-bind:href="news.url">
+                  <span>{{news.content }}</span>
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page7" class="container-fluid tab-pane fade">
+          <div class="row">
+            <div class="col-sm-6">
+              <header>
+                <h4>新闻</h4>
+              </header>
+              <div class="list-group">
+                 <a style="color:black" class="list-group-item" v-for="(news,index) in page7news" v-show="index<9" v-bind:href="news.url">
+                    <img  class="img-responsive img-rounded" v-bind:src="news.image" alt="" style="width:20%;height:20%">
+                    <span>{{ news.content }}</span>
+                  </a>
+               
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <header>
+                <h4>通知</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" v-for="(notice,index) in page7notices" v-show="index<9" class="list-group-item" v-bind:href="notice.url">
+                  <span>{{ notice.content }}</span>
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page8" class="container-fluid tab-pane fade">
+          <div class="row">
+            <div class="col-sm-4">
+              <header>
+                <h4>部门电话</h4>
+              </header>
+              <ul class="list-group">
+                <li class="list-group-item" v-for="number in numbers">
+                  <span>{{number.name}}</span><br><spam>{{number.item}}</spam>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <header>
+                <h4>本科专业</h4>
+              </header>
+              <ul class="list-group">
+                <li class="list-group-item" v-for="pro in pros">{{pro.item}}</li>
+               </ul>
+            </div>
+            <div class="col-sm-4">
+              <header>
+                <h4>硕士点</h4>
+              </header>
+              <ul class="list-group">
+                <li class="list-group-item" v-for="pg in pgs">{{pg.item}}</li>
+              </ul>
+            </div><br>
+            <div class="col-sm-4">
+              <header>
+                <h4>博士点</h4>
+              </header>
+              <ul class="list-group">
+                <li class="list-group-item" v-for="dr in drs">{{dr.item}}</li>
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <header>
+                <h4>常用链接</h4>
+              </header>
+              <div class="list-group">
+                <a style="color:black" class="list-group-item" v-for="lk in lks" v-bind:href="lk.url">
+                  <span>{{lk.name}}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <a href="#0" class="cd-top">Top</a>     
+      </div>
+    </main>
+ <!--  </div> -->
+  <script src="../cpnts/vue-2.5.16/vue.min-2.5.16.js"></script>
+  <script src="../utils/qwest.min.js"></script>
+  <script src="../scripts/home.js"></script>
+  <script src="../cpnts/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="../cpnts/dist/tuxedo-menu.min.js"></script>
+  <script src="../scripts/top.js"></script>
+  <script>
+      (function ($) {
+          var isFixed = true;
+          $('#sidebar').tuxedoMenu({isFixed: isFixed});
+          $('#toggle-is-fixed').on('click', function () {
+              $('#sidebar').tuxedoMenu({isFixed: isFixed = !isFixed});
+              $('#menu-container').toggleClass('col-sm-3');
+              $('.tuxedo-menu-trigger').toggleClass('hidden');
+              $('#menu-style').html(isFixed ? 'Sidebar' : 'Drawer');
+          });
+      })(jQuery);
+  </script>
+</body>
+</html>
+     
+     
+   
